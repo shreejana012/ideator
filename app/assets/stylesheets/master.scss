@@ -8,4 +8,17 @@
   font-weight: 100;
   font-size: 30px;
 }
-
+html,
+body {
+  height: 100%;
+}
+#warp {
+  min-height: 100%;
+  height: auto;
+  margin: 0 auto -120px;
+  padding: 0 0 120px;
+}
+#footer{
+height: 120px;
+background-color: #f5f5f5;
+}
