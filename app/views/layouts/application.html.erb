@@ -11,6 +11,52 @@
   </head>
 
   <body>
+<div id = "wrap">
+<nav class="navbar navbar-default">
+            <div class="container-fluid">
+               <div class = "navbar-header">
+               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/" style="color: #337AB7;">Ideator</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+           <li><a href = "">All Ideas</a></li>
+           <li><a href = "">Inspire me</a></li>
+           <li><a href = "">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+     <div class = "container">
     <%= yield %>
+    </div>
+      </div>
+      <div id = "footer">
+     <div class="container">
+    <div class = "row">
+      <div class = "col-xs-12 col-md-4">
+        <h4>Contact</h4>
+        <p>contact@techrise.me</p>
+      </div>
+      <div class = "col-xs-12 col-md-4">
+        <h4>Find Us</h4>
+        <div style = "font-size: 40px;">
+          <a href = "#"><i class="fa fa-facebook-official social" ></i></a>
+          <a href = "#"><i class="fa fa-twitter-square social" ></i></a>
+          <a href = "#"><i class="fa fa-linkedin-square social" ></i></a>
+        </div>
+      </div>
+      <div class = "col-xs-12 col-md-4">
+        <h4>© TECHRISE 2016</h4>
+        <p>All Rights Reserved</p>
+      </div>
+    </div>
+  </div>
+ </div>
   </body>
 </html>
