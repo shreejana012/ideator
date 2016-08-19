@@ -1,7 +1,10 @@
-<html>
-<body>
-     <div class = "container">
-   
+<% @ideas.each do |idea| %>
+ <div class="panel panel-default">
+  <div class="panel-body">
+     <blockquote>
+      <p><%=idea.description %></p>
+      <small><%=idea.author %></small>
+      </blockquote>
   </div>
-</body>
-</html>
+</div>
+<% end %>
