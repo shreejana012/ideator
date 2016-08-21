@@ -5,10 +5,10 @@ class IdeasController < ApplicationController
     def create
     	@ideas = Idea.create(idea_params)
     end
-    
+
     private
 
     def idea_params
-    	params.require(:idea).permit(:discription ,:author)
+    	params.require(:idea).permit(:description ,:author)
     end
 end
