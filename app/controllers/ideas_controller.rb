@@ -4,6 +4,7 @@ class IdeasController < ApplicationController
     end
     def create
     	@ideas = Idea.create(idea_params)
+        redirect_to root_path
     end
     def edit
         @idea = Idea.find(params[:id])
@@ -21,10 +22,10 @@ def destroy
     @idea.destroy
     redirect_to root_path
 end
+
     private
 
-    def idea_params
-    	params.require(:idea).permit(:description ,:author)
-    end
-    
+  def idea_params
+    params.require(:idea).permit(:description, :author)
+  end
 end
