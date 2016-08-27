@@ -1,6 +1,10 @@
- <h1>Reverse Idea</h1>
- <%= simple_form_for @idea, method: :patch do |f| %>
- <% f.input :description %>
- <% f.input :author %>
- <% f.submit 'Submit', class: 'btn btn-primary' %>
- <% end %>
+<div class = "panel panel-default">
+<div class = "panel-body">
+<h3 style="color: #7721a2;">Revise Idea</h3>
+<%= simple_form_for @idea, method: :patch do |f| %>
+<%= f.input :description %>
+  <%= f.input :author %>
+  <%= f.submit 'Submit', class: 'btn btn-primary' %>
+<% end %>
+</div>
+</div>
