@@ -6,90 +6,80 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
   </head>
-
   <body>
-<div id = "wrap">
-<nav class="navbar navbar-default">
-            <div class="container-fluid">
-               <div class = "navbar-header">
-               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/" style="color: #24a696;">Ideator</a>
-      </div>
-      <div class="collapse navbar-collapse text-center" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-           <li><%=link_to 'All Ideas',root_path %></li>
-           <li><%=link_to 'Inspire Me',random_path %></li>
-           <li><%= link_to 'About',about_path %></li>
-           <li><button type="button" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#myModal">
-  Add Idea
-</button></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-        <h4 class="modal-title" id="myModalLabel">Post your idea</h4>
-      </div><!-- modal-header -->
-      <%= simple_form_for Idea.new do |f| %>
-        <div class="modal-body">
-          <%= f.input :description %>
-          <%= f.input :author %>
-        </div>      
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <%= f.submit 'Submit', class: 'btn btn-primary' %>
-        </div><!-- modal-footer -->   
-      <% end %>
-    </div><!-- modal-content-->
-  </div><!-- modal-dialog-->
-</div><!-- modal fade -->
-</div>
-     <div class = "container">
-    <%= yield %>
-    <br />
-     <br />
-      <br />
-       <br />
-        <br />
-         <br />
-            
-    </div>
-      </div>
-      <div id = "footer">
-        <footer class= "footer text-center">
-     <div class="container">
-    <div class = "row">
-      <div class = "col-xs-12 col-md-4">
-        <h4>Contact</h4>
-        <p>shrijanapoudel.com.np</p>
-      </div>
-      <div class = "col-xs-12 col-md-4">
-        <h4>Find Us</h4>
-        <div style = "font-size: 40px;">
-          <a href = "#"><i class="fa fa-facebook-official social" ></i></a>
-          <a href = "#"><i class="fa fa-twitter-square social" ></i></a>
-          <a href = "#"><i class="fa fa-linkedin-square social" ></i></a>
+    <div id = "wrap">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class = "navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/" style="color: #24a696;">Ideator</a>
+          </div>
+          <div class="collapse navbar-collapse text-center" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              <li><%=link_to 'All Ideas',root_path %></li>
+              <li><%=link_to 'Inspire Me',random_path %></li>
+              <li><%= link_to 'About',about_path %></li>
+              <li><button type="button" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#myModal">Add Idea</button></li>
+            </ul>
+          </div>
         </div>
-      </div>
-      <div class = "col-xs-12 col-md-4">
-        <h4>© TECHRISE 2016</h4>
-        <p>All Rights Reserved</p>
-      </div>
+      </nav>
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+              <h4 class="modal-title" id="myModalLabel">Post your idea</h4>
+            </div><!-- modal-header -->
+            <%= simple_form_for Idea.new do |f| %>
+              <div class="modal-body">
+                <%= f.input :description %>
+                <%= f.input :author %>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <%= f.submit 'Submit', class: 'btn btn-primary' %>
+              </div><!-- modal-footer -->
+            <% end %>
+          </div><!-- modal-content-->
+        </div><!-- modal-dialog-->
+      </div><!-- modal fade -->
     </div>
-  </div>
-</footer>
- </div>
+    <div class = "container">
+      <%= yield %>
+    </div>
+
+    <div id = "footer">
+      <footer class= "footer text-center">
+        <div class="container">
+          <div class = "row">
+            <div class = "col-xs-12 col-md-4">
+              <h4>Contact</h4>
+              <p>shrijanapoudel.com.np</p>
+            </div>
+            <div class = "col-xs-12 col-md-4">
+              <h4>Find Us</h4>
+              <div style = "font-size: 40px;">
+                <a href = "#"><i class="fa fa-facebook-official social" ></i></a>
+                <a href = "#"><i class="fa fa-twitter-square social" ></i></a>
+                <a href = "#"><i class="fa fa-linkedin-square social" ></i></a>
+              </div>
+            </div>
+            <div class = "col-xs-12 col-md-4">
+              <h4>©shrijana-2016</h4>
+              <p>All Rights Reserved</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>

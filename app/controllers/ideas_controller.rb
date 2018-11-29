@@ -1,29 +1,35 @@
+# frozen_string_literal: true
+
 class IdeasController < ApplicationController
-    def index
-	@ideas = Idea.order("created_at DESC").paginate(:page => params[:page], :per_page => 3)
+  def index
+    @ideas = Idea.order('created_at DESC').paginate(page: params[:page], per_page: 3)
+  end
+
+  def create
+    @ideas = Idea.create(idea_params)
+    redirect_to root_path
+  end
+
+  def edit
+    @idea = Idea.find(params[:id])
+  end
+
+  def update
+    @idea = Idea.find(params[:id])
+    if @idea.update(idea_params)
+      redirect_to root_path
+    else
+      redirect_to edit_idea_path(params[:id])
     end
-    def create
-    	@ideas = Idea.create(idea_params)
-        redirect_to root_path
-    end
-    def edit
-        @idea = Idea.find(params[:id])
-    end
-    def update
-        @idea = Idea.find(params[:id])
-        if @idea.update(idea_params)
-            redirect_to root_path
-        else
-            redirect_to edit_idea_path(params[:id])
-    end
-end
-def destroy
+  end
+
+  def destroy
     @idea = Idea.find(params[:id])
     @idea.destroy
     redirect_to root_path
-end
+  end
 
-    private
+  private
 
   def idea_params
     params.require(:idea).permit(:description, :author)
